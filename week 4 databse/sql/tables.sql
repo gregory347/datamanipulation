@@ -1,0 +1,34 @@
+INSERT INTO EXPENSES (
+    CATEGORY,
+    DEPARTMENT,
+    AMOUNT,
+    DATE
+) VALUES (
+    'Travel',
+    'Sales',
+    350.00,
+    '2024-11-06'
+);
+
+UPDATE EXPENSES
+SET
+    AMOUNT = 400.00
+WHERE
+    ID = 5;
+
+DELETE FROM EXPENSES
+WHERE
+    ID = 5;
+
+UPDATE EXPENSES
+SET
+    AMOUNT = NULL
+WHERE
+    ID = 5;
+
+SELECT
+    *
+FROM
+    EXPENSES
+WHERE
+    AMOUNT IS NULL;

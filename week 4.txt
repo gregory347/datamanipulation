@@ -1,0 +1,99 @@
+1. INSERT Statement
+The INSERT statement allows you to add new records (rows) into a table.
+
+Syntax:
+
+sql
+Copy code
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);
+Example:
+
+sql
+Copy code
+INSERT INTO expenses (category, department, amount, date)
+VALUES ('Travel', 'Sales', 350.00, '2024-11-06');
+This query adds a new expense record to the expenses table with specific values for category, department, amount, and date.
+
+2. UPDATE Statement
+The UPDATE statement is used to modify existing records in a table.
+
+Syntax:
+
+sql
+Copy code
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+Example:
+
+sql
+Copy code
+UPDATE expenses
+SET amount = 400.00
+WHERE id = 5;
+This query updates the amount for the record where id equals 5 in the expenses table.
+
+Note: Always use the WHERE clause when updating records to avoid updating all rows unintentionally.
+
+3. DELETE Statement
+The DELETE statement is used to remove records from a table.
+
+Syntax:
+
+sql
+Copy code
+DELETE FROM table_name WHERE condition;
+Example:
+
+sql
+Copy code
+DELETE FROM expenses
+WHERE id = 5;
+This query deletes the record from the expenses table where the id is 5.
+
+Note: Be careful when using DELETE without a WHERE clause, as it will remove all records from the table.
+
+4. Handling NULL Values
+NULL represents missing, undefined, or unknown data in a database. You can insert, update, and filter for NULL values in queries.
+
+Inserting NULL Values:
+
+sql
+Copy code
+INSERT INTO expenses (category, department, amount, date)
+VALUES ('Travel', 'Sales', NULL, '2024-11-06');
+This inserts a record with a NULL value for the amount column.
+
+Updating NULL Values:
+
+sql
+Copy code
+UPDATE expenses
+SET amount = NULL
+WHERE id = 5;
+This sets the amount field to NULL for the record with id 5.
+
+Filtering NULL Values:
+
+sql
+Copy code
+SELECT * FROM expenses
+WHERE amount IS NULL;
+This query retrieves all records where the amount is NULL.
+
+Example Scenarios:
+Add New Entry:
+
+Imagine you need to add a new expense for the Marketing department. You would use the INSERT statement.
+Update Existing Record:
+
+If the expense in the Travel category has been revised, you can use the UPDATE statement to adjust the amount.
+Delete Unwanted Record:
+
+If an incorrect expense record was entered, you can delete it using the DELETE statement.
+Practice:
+Use INSERT to add a few entries to your expenses table.
+Use UPDATE to modify some values, like changing the amount for a specific record.
+Use DELETE to remove a record from your table.
+Practice handling NULL values by inserting and filtering them.
